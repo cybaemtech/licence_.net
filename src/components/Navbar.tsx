@@ -144,7 +144,7 @@ function Navbar({ darkMode, setDarkMode }: NavbarProps) {
       <div className="container mx-auto px-3">
         <div className="flex justify-between items-center h-14">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2 mr-8">
             <img
               src={companyLogo}
               alt={`${companyName} Logo`}
