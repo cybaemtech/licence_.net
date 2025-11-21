@@ -1,0 +1,186 @@
+PS C:\Users\USER\Downloads\LMS41 (2)\LMS41> php test_localhost_env.php
+=== Localhost Environment Test ===
+
+1. Checking .env file...
+   Looking for: C:\Users\USER\Downloads\LMS41 (2)\LMS41/.env
+   ✅ .env file EXISTS
+
+2. .env file contents:
+   DB_DRIVER=mysql
+   PORT=8000
+   NODE_ENV=production
+   FRONTEND_ORIGIN=*
+   MYSQL_HOST=82.25.105.94
+   MYSQL_USER=cybaemtechnet_LMS_Project
+   MYSQL_PASSWORD=***hidden***
+   MYSQL_DATABASE=cybaemtechnet_LMS_Project
+   PORT=8000
+
+3. Loading environment variables...
+Environment defaults loaded: EMAIL_MODE=production, APP_URL=https://cybaemtech.net
+   ✅ MYSQL_HOST = 82.25.105.94
+   ✅ MYSQL_DATABASE = cybaemtechnet_LMS_Project
+   ✅ MYSQL_USER = cybaemtechnet_LMS_Project
+   ✅ MYSQL_PASSWORD = ***hidden***
+
+4. Testing database connection...
+   Host: 82.25.105.94:3306
+   Database: cybaemtechnet_LMS_Project
+   User: cybaemtechnet_LMS_Project
+
+   ✅ Database connection SUCCESSFUL!
+
+5. Testing database query...
+   ✅ Found 2 users in database
+
+=== ALL TESTS PASSED ===
+Your localhost environment is configured correctly!
+You can now run: npm run dev
+
+PS C:\Users\USER\Downloads\LMS41 (2)\LMS41> npm run dev
+>>
+
+> license-procurement-system@1.0.0 dev
+> npm run start
+
+
+> license-procurement-system@1.0.0 start
+> concurrently "npm run backend" "npm run frontend" --names "PHP,React" --prefix-colors "cyan,magenta"
+
+[PHP] 
+[PHP] > license-procurement-system@1.0.0 backend
+[PHP] > php -c php.ini -S 127.0.0.1:8000 -t api
+[PHP]
+[React]
+[React] > license-procurement-system@1.0.0 frontend
+[React] > vite --host 0.0.0.0 --port 5000
+[React]
+[PHP] [Thu Nov 20 12:52:21 2025] PHP 8.0.30 Development Server (http://127.0.0.1:8000) started
+[React] NODE_ENV=production is not supported in the .env file. Only NODE_ENV=development is supported to create a development build of your project. If you need to set process.env.NODE_ENV, you can set it in the Vite config instead.      
+[React] Port 5000 is in use, trying another one...
+[React] Port 5001 is in use, trying another one...
+[React]
+[React]   VITE v5.1.6  ready in 418 ms
+[React]
+[React]   ➜  Local:   http://localhost:5002/
+[React]   ➜  Network: http://192.168.137.1:5002/
+[React]   ➜  Network: http://192.168.1.65:5002/
+[React] [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[PHP] [Thu Nov 20 12:52:48 2025] 127.0.0.1:51232 Accepted
+[React] Sending Request to the Target: GET /api/company-settings
+[PHP] [Thu Nov 20 12:52:48 2025] 127.0.0.1:51233 Accepted
+[React] Sending Request to the Target: GET /api/licenses
+[PHP] [Thu Nov 20 12:52:48 2025] 127.0.0.1:51234 Accepted
+[React] Sending Request to the Target: GET /api/sales
+[PHP] [Thu Nov 20 12:52:48 2025] Environment defaults loaded: EMAIL_MODE=production, APP_URL=https://cybaemtech.net    
+[PHP] [Thu Nov 20 12:52:48 2025] 127.0.0.1:51232 [200]: GET /api/company-settings
+[PHP] [Thu Nov 20 12:52:48 2025] 127.0.0.1:51232 Closing
+[PHP] [Thu Nov 20 12:52:48 2025] Environment defaults loaded: EMAIL_MODE=production, APP_URL=https://cybaemtech.net    
+[React] Received Response from the Target: 200 /api/company-settings
+[React] Received Response from the Target: 200 /api/licenses
+[PHP] [Thu Nov 20 12:52:48 2025] 127.0.0.1:51233 [200]: GET /api/licenses
+[PHP] [Thu Nov 20 12:52:48 2025] 127.0.0.1:51233 Closing
+[PHP] [Thu Nov 20 12:52:48 2025] Environment defaults loaded: EMAIL_MODE=production, APP_URL=https://cybaemtech.net    
+[PHP] [Thu Nov 20 12:52:48 2025] 127.0.0.1:51234 [200]: GET /api/sales
+[PHP] [Thu Nov 20 12:52:48 2025] 127.0.0.1:51234 Closing
+[React] Received Response from the Target: 200 /api/sales
+[PHP] [Thu Nov 20 12:52:48 2025] 127.0.0.1:51235 Accepted
+[React] Sending Request to the Target: GET /api/company-settings
+[React] Sending Request to the Target: GET /api/licenses
+[PHP] [Thu Nov 20 12:52:48 2025] Environment defaults loaded: EMAIL_MODE=production, APP_URL=https://cybaemtech.net
+[React] Received Response from the Target: 200 /api/company-settings
+[React] Sending Request to the Target: GET /api/sales
+[PHP] [Thu Nov 20 12:52:48 2025] 127.0.0.1:51235 [200]: GET /api/company-settings
+[PHP] [Thu Nov 20 12:52:48 2025] 127.0.0.1:51235 Closing
+[PHP] [Thu Nov 20 12:52:48 2025] 127.0.0.1:51236 Accepted
+[PHP] [Thu Nov 20 12:52:48 2025] Environment defaults loaded: EMAIL_MODE=production, APP_URL=https://cybaemtech.net    
+[React] Received Response from the Target: 200 /api/licenses
+[PHP] [Thu Nov 20 12:52:48 2025] 127.0.0.1:51236 [200]: GET /api/licenses
+[PHP] [Thu Nov 20 12:52:48 2025] 127.0.0.1:51236 Closing
+[PHP] [Thu Nov 20 12:52:48 2025] 127.0.0.1:51237 Accepted
+[PHP] [Thu Nov 20 12:52:48 2025] Environment defaults loaded: EMAIL_MODE=production, APP_URL=https://cybaemtech.net    
+[React] Received Response from the Target: 200 /api/sales
+[PHP] [Thu Nov 20 12:52:48 2025] 127.0.0.1:51237 [200]: GET /api/sales
+[PHP] [Thu Nov 20 12:52:48 2025] 127.0.0.1:51237 Closing
+Terminate batch job (Y/N)? [React] Terminate batch job (Y/N)? 
+[PHP] Terminate batch job (Y/N)? 
+[React] npm run frontend exited with code 1
+[PHP] npm run backend exited with code 1
+^C
+PS C:\Users\USER\Downloads\LMS41 (2)\LMS41> dir .env
+
+
+    Directory: C:\Users\USER\Downloads\LMS41 (2)\LMS41
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        20-11-2025     12:50            619 .env
+
+
+PS C:\Users\USER\Downloads\LMS41 (2)\LMS41> 
+PS C:\Users\USER\Downloads\LMS41 (2)\LMS41>
+PS C:\Users\USER\Downloads\LMS41 (2)\LMS41> npm run dev
+>>
+
+> license-procurement-system@1.0.0 dev
+> npm run start
+
+
+> license-procurement-system@1.0.0 start
+> concurrently "npm run backend" "npm run frontend" --names "PHP,React" --prefix-colors "cyan,magenta"
+
+[PHP] 
+[PHP] > license-procurement-system@1.0.0 backend
+[PHP] > php -c php.ini -S 127.0.0.1:8000 -t api
+[PHP]
+[React] 
+[React] > license-procurement-system@1.0.0 frontend
+[React] > vite --host 0.0.0.0 --port 5000
+[React]
+[PHP] [Thu Nov 20 12:53:46 2025] PHP 8.0.30 Development Server (http://127.0.0.1:8000) started
+[React] NODE_ENV=production is not supported in the .env file. Only NODE_ENV=development is supported to create a development build of your project. If you need to set process.env.NODE_ENV, you can set it in the Vite config instead.      
+[React] Port 5000 is in use, trying another one...
+[React]
+[React]   VITE v5.1.6  ready in 477 ms
+[React]
+[React]   ➜  Local:   http://localhost:5001/
+[React]   ➜  Network: http://192.168.137.1:5001/
+[React]   ➜  Network: http://192.168.1.65:5001/
+[React] [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[PHP] [Thu Nov 20 12:53:59 2025] 127.0.0.1:51312 Accepted
+[React] Sending Request to the Target: GET /api/company-settings
+[PHP] [Thu Nov 20 12:53:59 2025] 127.0.0.1:51313 Accepted
+[React] Sending Request to the Target: GET /api/licenses
+[React] Sending Request to the Target: GET /api/sales
+[PHP] [Thu Nov 20 12:53:59 2025] 127.0.0.1:51314 Accepted
+[PHP] [Thu Nov 20 12:53:59 2025] Environment defaults loaded: EMAIL_MODE=production, APP_URL=https://cybaemtech.net    
+[PHP] [Thu Nov 20 12:53:59 2025] 127.0.0.1:51312 [200]: GET /api/company-settings
+[PHP] [Thu Nov 20 12:53:59 2025] 127.0.0.1:51312 Closing
+[PHP] [Thu Nov 20 12:53:59 2025] Environment defaults loaded: EMAIL_MODE=production, APP_URL=https://cybaemtech.net    
+[PHP] [Thu Nov 20 12:53:59 2025] 127.0.0.1:51313 [200]: GET /api/licenses
+[PHP] [Thu Nov 20 12:53:59 2025] 127.0.0.1:51313 Closing
+[PHP] [Thu Nov 20 12:53:59 2025] Environment defaults loaded: EMAIL_MODE=production, APP_URL=https://cybaemtech.net    
+[PHP] [Thu Nov 20 12:53:59 2025] 127.0.0.1:51314 [200]: GET /api/sales
+[PHP] [Thu Nov 20 12:53:59 2025] 127.0.0.1:51314 Closing
+[React] Received Response from the Target: 200 /api/company-settings
+[React] Received Response from the Target: 200 /api/licenses
+[React] Received Response from the Target: 200 /api/sales
+[React] Sending Request to the Target: GET /api/company-settings
+[React] Sending Request to the Target: GET /api/licenses
+[React] Sending Request to the Target: GET /api/sales
+[PHP] [Thu Nov 20 12:53:59 2025] 127.0.0.1:51315 Accepted
+[PHP] [Thu Nov 20 12:54:00 2025] 127.0.0.1:51316 Accepted
+[PHP] [Thu Nov 20 12:54:00 2025] 127.0.0.1:51317 Accepted
+[PHP] [Thu Nov 20 12:54:00 2025] Environment defaults loaded: EMAIL_MODE=production, APP_URL=https://cybaemtech.net    
+[PHP] [Thu Nov 20 12:54:00 2025] 127.0.0.1:51315 [200]: GET /api/company-settings
+[PHP] [Thu Nov 20 12:54:00 2025] 127.0.0.1:51315 Closing
+[PHP] [Thu Nov 20 12:54:00 2025] Environment defaults loaded: EMAIL_MODE=production, APP_URL=https://cybaemtech.net    
+[PHP] [Thu Nov 20 12:54:00 2025] 127.0.0.1:51316 [200]: GET /api/licenses
+[PHP] [Thu Nov 20 12:54:00 2025] 127.0.0.1:51316 Closing
+[PHP] [Thu Nov 20 12:54:00 2025] Environment defaults loaded: EMAIL_MODE=production, APP_URL=https://cybaemtech.net    
+[PHP] [Thu Nov 20 12:54:00 2025] 127.0.0.1:51317 [200]: GET /api/sales
+[PHP] [Thu Nov 20 12:54:00 2025] 127.0.0.1:51317 Closing
+[React] Received Response from the Target: 200 /api/company-settings
+[React] Received Response from the Target: 200 /api/licenses
+[React] Received Response from the Target: 200 /api/sales

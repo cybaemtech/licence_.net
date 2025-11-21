@@ -1,0 +1,43 @@
+Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+hook.js:608  API Error Response: {"success":false,"error":"Internal Server Error","message":"Undefined constant PDO::MYSQL_ATTR_INIT_COMMAND","details":{"file":"database.php","line":54,"code":0}}
+overrideMethod @ hook.js:608
+hook.js:608  Error fetching company settings: Error: HTTP error! status: 500
+    at fetchApi (apiHelper.ts:61:11)
+    at async fetchCompanySettings (Navbar.tsx:48:24)
+overrideMethod @ hook.js:608
+:5001/api/licenses:1   Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+hook.js:608  Database error: Error: Internal Server Error
+    at apiRequest (api.ts:69:11)
+    at async TableQuery.select (api.ts:244:22)
+    at async fetchDashboardData (Dashboard.tsx:655:31)
+overrideMethod @ hook.js:608
+hook.js:608  Fetch error: Error: Internal Server Error
+    at apiRequest (api.ts:69:11)
+    at async TableQuery.select (api.ts:244:22)
+    at async fetchDashboardData (Dashboard.tsx:655:31)
+overrideMethod @ hook.js:608
+:5001/api/sales:1   Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+hook.js:608  Error fetching sales: Error: Internal Server Error
+    at fetchSalesData (Dashboard.tsx:691:15)
+overrideMethod @ hook.js:608
+:5001/api/company-settings:1   Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+hook.js:608  API Error Response: {"success":false,"error":"Internal Server Error","message":"Undefined constant PDO::MYSQL_ATTR_INIT_COMMAND","details":{"file":"database.php","line":54,"code":0}}
+overrideMethod @ hook.js:608
+hook.js:608  Error fetching company settings: Error: HTTP error! status: 500
+    at fetchApi (apiHelper.ts:61:11)
+    at async fetchCompanySettings (Navbar.tsx:48:24)
+overrideMethod @ hook.js:608
+:5001/api/licenses:1   Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+hook.js:608  Database error: Error: Internal Server Error
+    at apiRequest (api.ts:69:11)
+    at async TableQuery.select (api.ts:244:22)
+    at async fetchDashboardData (Dashboard.tsx:655:31)
+overrideMethod @ hook.js:608
+hook.js:608  Fetch error: Error: Internal Server Error
+    at apiRequest (api.ts:69:11)
+    at async TableQuery.select (api.ts:244:22)
+    at async fetchDashboardData (Dashboard.tsx:655:31)
+overrideMethod @ hook.js:608
+:5001/api/sales:1   Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+hook.js:608  Error fetching sales: Error: Internal Server Error
+    at fetchSalesData (Dashboard.tsx:691:15)

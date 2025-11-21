@@ -1,0 +1,53 @@
+Dashboard.tsx:659 
+ Database error: Error: Database connection failed
+    at TableQuery.select (api.ts:251:15)
+    at async fetchDashboardData (Dashboard.tsx:656:31)
+overrideMethod	@	hook.js:608
+fetchDashboardData	@	Dashboard.tsx:659
+await in fetchDashboardData		
+(anonymous)	@	Dashboard.tsx:233
+commitHookEffectListMount	@	react-dom.development.js:23189
+invokePassiveEffectMountInDEV	@	react-dom.development.js:25193
+invokeEffectsInDev	@	react-dom.development.js:27390
+commitDoubleInvokeEffectsInDEV	@	react-dom.development.js:27369
+flushPassiveEffectsImpl	@	react-dom.development.js:27095
+flushPassiveEffects	@	react-dom.development.js:27023
+(anonymous)	@	react-dom.development.js:26808
+workLoop	@	scheduler.development.js:266
+flushWork	@	scheduler.development.js:239
+performWorkUntilDeadline	@	scheduler.development.js:533
+Dashboard.tsx:666 
+ Fetch error: Error: Database connection failed
+    at TableQuery.select (api.ts:251:15)
+    at async fetchDashboardData (Dashboard.tsx:656:31)
+overrideMethod	@	hook.js:608
+fetchDashboardData	@	Dashboard.tsx:666
+await in fetchDashboardData		
+(anonymous)	@	Dashboard.tsx:233
+commitHookEffectListMount	@	react-dom.development.js:23189
+invokePassiveEffectMountInDEV	@	react-dom.development.js:25193
+invokeEffectsInDev	@	react-dom.development.js:27390
+commitDoubleInvokeEffectsInDEV	@	react-dom.development.js:27369
+flushPassiveEffectsImpl	@	react-dom.development.js:27095
+flushPassiveEffects	@	react-dom.development.js:27023
+(anonymous)	@	react-dom.development.js:26808
+workLoop	@	scheduler.development.js:266
+flushWork	@	scheduler.development.js:239
+performWorkUntilDeadline	@	scheduler.development.js:533
+Dashboard.tsx:697 
+ Error fetching sales: Error: Database connection failed
+    at fetchSalesData (Dashboard.tsx:689:15)
+overrideMethod	@	hook.js:608
+fetchSalesData	@	Dashboard.tsx:697
+await in fetchSalesData		
+(anonymous)	@	Dashboard.tsx:234
+commitHookEffectListMount	@	react-dom.development.js:23189
+invokePassiveEffectMountInDEV	@	react-dom.development.js:25193
+invokeEffectsInDev	@	react-dom.development.js:27390
+commitDoubleInvokeEffectsInDEV	@	react-dom.development.js:27369
+flushPassiveEffectsImpl	@	react-dom.development.js:27095
+flushPassiveEffects	@	react-dom.development.js:27023
+(anonymous)	@	react-dom.development.js:26808
+workLoop	@	scheduler.development.js:266
+flushWork	@	scheduler.development.js:239
+performWorkUntilDeadline	@	scheduler.development.js:533

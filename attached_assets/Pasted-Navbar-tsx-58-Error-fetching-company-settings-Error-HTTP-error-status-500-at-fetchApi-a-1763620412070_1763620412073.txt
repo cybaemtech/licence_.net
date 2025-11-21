@@ -1,0 +1,52 @@
+Navbar.tsx:58 
+ Error fetching company settings: Error: HTTP error! status: 500
+    at fetchApi (apiHelper.ts:61:11)
+    at async fetchCompanySettings (Navbar.tsx:48:24)
+overrideMethod	@	hook.js:608
+fetchCompanySettings	@	Navbar.tsx:58
+await in fetchCompanySettings		
+(anonymous)	@	Navbar.tsx:43
+commitHookEffectListMount	@	react-dom.development.js:23189
+invokePassiveEffectMountInDEV	@	react-dom.development.js:25193
+invokeEffectsInDev	@	react-dom.development.js:27390
+commitDoubleInvokeEffectsInDEV	@	react-dom.development.js:27369
+flushPassiveEffectsImpl	@	react-dom.development.js:27095
+flushPassiveEffects	@	react-dom.development.js:27023
+(anonymous)	@	react-dom.development.js:26808
+workLoop	@	scheduler.development.js:266
+flushWork	@	scheduler.development.js:239
+performWorkUntilDeadline	@	scheduler.development.js:533
+Dashboard.tsx:681 
+ 
+ GET http://localhost:5001/api/sales 500 (Internal Server Error)
+fetchSalesData	@	Dashboard.tsx:681
+(anonymous)	@	Dashboard.tsx:234
+commitHookEffectListMount	@	react-dom.development.js:23189
+invokePassiveEffectMountInDEV	@	react-dom.development.js:25193
+invokeEffectsInDev	@	react-dom.development.js:27390
+commitDoubleInvokeEffectsInDEV	@	react-dom.development.js:27369
+flushPassiveEffectsImpl	@	react-dom.development.js:27095
+flushPassiveEffects	@	react-dom.development.js:27023
+(anonymous)	@	react-dom.development.js:26808
+workLoop	@	scheduler.development.js:266
+flushWork	@	scheduler.development.js:239
+performWorkUntilDeadline	@	scheduler.development.js:533
+Dashboard.tsx:699 
+ Error fetching sales: SyntaxError: Failed to execute 'json' on 'Response': Unexpected end of JSON input
+    at fetchSalesData (Dashboard.tsx:688:37)
+overrideMethod	@	hook.js:608
+fetchSalesData	@	Dashboard.tsx:699
+await in fetchSalesData		
+(anonymous)	@	Dashboard.tsx:234
+commitHookEffectListMount	@	react-dom.development.js:23189
+invokePassiveEffectMountInDEV	@	react-dom.development.js:25193
+invokeEffectsInDev	@	react-dom.development.js:27390
+commitDoubleInvokeEffectsInDEV	@	react-dom.development.js:27369
+flushPassiveEffectsImpl	@	react-dom.development.js:27095
+flushPassiveEffects	@	react-dom.development.js:27023
+(anonymous)	@	react-dom.development.js:26808
+workLoop	@	scheduler.development.js:266
+flushWork	@	scheduler.development.js:239
+performWorkUntilDeadline	@	scheduler.development.js:533
+﻿
+

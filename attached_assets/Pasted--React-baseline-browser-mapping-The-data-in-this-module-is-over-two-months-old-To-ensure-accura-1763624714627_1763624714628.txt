@@ -1,0 +1,37 @@
+[React] [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[React] Sending Request to the Target: GET /api/company-settings
+[PHP] [Thu Nov 20 13:11:17 2025] 127.0.0.1:53124 Accepted
+[PHP] [Thu Nov 20 13:11:17 2025] 127.0.0.1:53125 Accepted
+[PHP] [Thu Nov 20 13:11:17 2025] 127.0.0.1:53126 Accepted
+[PHP] [Thu Nov 20 13:11:18 2025] Environment defaults loaded: EMAIL_MODE=production, APP_URL=https://cybaemtech.net    
+[PHP] [Thu Nov 20 13:11:18 2025] 127.0.0.1:53124 [200]: GET /api/company-settings
+[PHP] [Thu Nov 20 13:11:18 2025] 127.0.0.1:53124 Closing
+[PHP] [Thu Nov 20 13:11:18 2025] Environment defaults loaded: EMAIL_MODE=production, APP_URL=https://cybaemtech.net    
+[PHP] [Thu Nov 20 13:11:18 2025] 127.0.0.1:53125 [200]: GET /api/licenses
+[PHP] [Thu Nov 20 13:11:18 2025] 127.0.0.1:53125 Closing
+[PHP] [Thu Nov 20 13:11:18 2025] Environment defaults loaded: EMAIL_MODE=production, APP_URL=https://cybaemtech.net    
+[PHP] [Thu Nov 20 13:11:18 2025] 127.0.0.1:53126 [200]: GET /api/sales
+[PHP] [Thu Nov 20 13:11:18 2025] 127.0.0.1:53126 Closing
+[React] Sending Request to the Target: GET /api/licenses
+[React] Sending Request to the Target: GET /api/sales
+[React] Received Response from the Target: 200 /api/company-settings
+[React] Received Response from the Target: 200 /api/licenses
+[React] Received Response from the Target: 200 /api/sales
+[React] Sending Request to the Target: GET /api/company-settings
+[React] Sending Request to the Target: GET /api/licenses
+[PHP] [Thu Nov 20 13:11:18 2025] 127.0.0.1:53127 Accepted
+[PHP] [Thu Nov 20 13:11:18 2025] 127.0.0.1:53128 Accepted
+[PHP] [Thu Nov 20 13:11:18 2025] 127.0.0.1:53129 Accepted
+[React] Sending Request to the Target: GET /api/sales
+[React] Received Response from the Target: 200 /api/company-settings
+[React] Received Response from the Target: 200 /api/licenses
+[PHP] [Thu Nov 20 13:11:18 2025] Environment defaults loaded: EMAIL_MODE=production, APP_URL=https://cybaemtech.net    
+[PHP] [Thu Nov 20 13:11:18 2025] 127.0.0.1:53127 [200]: GET /api/company-settings
+[PHP] [Thu Nov 20 13:11:18 2025] 127.0.0.1:53127 Closing
+[PHP] [Thu Nov 20 13:11:18 2025] Environment defaults loaded: EMAIL_MODE=production, APP_URL=https://cybaemtech.net    
+[PHP] [Thu Nov 20 13:11:18 2025] 127.0.0.1:53128 [200]: GET /api/licenses
+[PHP] [Thu Nov 20 13:11:18 2025] 127.0.0.1:53128 Closing
+[PHP] [Thu Nov 20 13:11:18 2025] Environment defaults loaded: EMAIL_MODE=production, APP_URL=https://cybaemtech.net    
+[PHP] [Thu Nov 20 13:11:18 2025] 127.0.0.1:53129 [200]: GET /api/sales
+[PHP] [Thu Nov 20 13:11:18 2025] 127.0.0.1:53129 Closing
+[React] Received Response from the Target: 200 /api/sales
