@@ -37,6 +37,18 @@ class UserManagementController {
                 if ($user['permissions']) {
                     $user['permissions'] = json_decode($user['permissions'], true);
                 }
+                
+                if (!$user['permissions'] || empty($user['permissions'])) {
+                    $user['permissions'] = PermissionHelper::getDefaultPermissions($user['role']);
+                    
+                    $updateSql = "UPDATE users SET permissions = :permissions WHERE id = :user_id";
+                    $updateStmt = $this->conn->prepare($updateSql);
+                    $permissionsJson = json_encode($user['permissions']);
+                    $updateStmt->bindParam(':permissions', $permissionsJson);
+                    $updateStmt->bindParam(':user_id', $user['id']);
+                    $updateStmt->execute();
+                }
+                
                 unset($user['password']);
             }
             

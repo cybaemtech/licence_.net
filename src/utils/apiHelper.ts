@@ -31,7 +31,7 @@ export const formatApiEndpoint = (endpoint: string): string => {
 };
 
 /**
- * Make an API request with proper formatting
+ * Make an API request with proper formatting and timeout
  */
 export const fetchApi = async (endpoint: string, options: RequestInit = {}) => {
   const url = formatApiEndpoint(endpoint);
@@ -47,21 +47,35 @@ export const fetchApi = async (endpoint: string, options: RequestInit = {}) => {
     'Content-Type': 'application/json',
   };
   
-  const response = await fetch(url, {
-    ...options,
-    headers: {
-      ...defaultHeaders,
-      ...options.headers,
-    },
-  });
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 30000);
   
-  if (!response.ok) {
-    const errorText = await response.text();
-    console.error('API Error Response:', errorText);
-    throw new Error(`HTTP error! status: ${response.status}`);
+  try {
+    const response = await fetch(url, {
+      ...options,
+      headers: {
+        ...defaultHeaders,
+        ...options.headers,
+      },
+      signal: controller.signal,
+    });
+    
+    clearTimeout(timeoutId);
+    
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('API Error Response:', errorText);
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    return response.json();
+  } catch (error: any) {
+    clearTimeout(timeoutId);
+    if (error.name === 'AbortError') {
+      throw new Error('Request timeout - database connection is slow. Please try again.');
+    }
+    throw error;
   }
-  
-  return response.json();
 };
 
 /**

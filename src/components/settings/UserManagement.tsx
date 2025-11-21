@@ -486,16 +486,22 @@ function UserManagement() {
                   </td>
                   <td className="px-6 py-4">
                     <div className="flex flex-wrap gap-1">
-                      {Object.entries(user.permissions).map(
-                        ([key, value]) =>
-                          value && (
-                            <span
-                              key={key}
-                              className="px-2 py-1 text-xs bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 rounded"
-                            >
-                              {permissionsList.find((p) => p.key === key)?.label || key}
-                            </span>
-                          )
+                      {user.permissions && Object.keys(user.permissions).length > 0 ? (
+                        Object.entries(user.permissions).map(
+                          ([key, value]) =>
+                            value && (
+                              <span
+                                key={key}
+                                className="px-2 py-1 text-xs bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 rounded"
+                              >
+                                {permissionsList.find((p) => p.key === key)?.label || key}
+                              </span>
+                            )
+                        )
+                      ) : (
+                        <span className="px-2 py-1 text-xs bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-400 rounded italic">
+                          No permissions assigned
+                        </span>
                       )}
                     </div>
                   </td>

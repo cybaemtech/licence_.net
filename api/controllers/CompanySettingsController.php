@@ -5,14 +5,46 @@ require_once __DIR__ . '/../utils/Auth.php';
 
 class CompanySettingsController {
     private $conn;
+    private $cacheFile = '/tmp/company_settings_cache.json';
+    private $cacheTimeout = 300;
     
     public function __construct() {
         $database = new Database();
         $this->conn = $database->getConnection();
     }
     
+    private function getCache() {
+        if (file_exists($this->cacheFile)) {
+            $cacheData = json_decode(file_get_contents($this->cacheFile), true);
+            if ($cacheData && (time() - $cacheData['timestamp']) < $this->cacheTimeout) {
+                return $cacheData['data'];
+            }
+        }
+        return null;
+    }
+    
+    private function setCache($data) {
+        $cacheData = [
+            'timestamp' => time(),
+            'data' => $data
+        ];
+        file_put_contents($this->cacheFile, json_encode($cacheData));
+    }
+    
+    private function clearCache() {
+        if (file_exists($this->cacheFile)) {
+            unlink($this->cacheFile);
+        }
+    }
+    
     public function getSettings() {
         try {
+            $cachedSettings = $this->getCache();
+            if ($cachedSettings) {
+                Response::success($cachedSettings, 'Company settings retrieved successfully (cached)');
+                return;
+            }
+            
             $sql = "SELECT * FROM company_settings LIMIT 1";
             $stmt = $this->conn->prepare($sql);
             $stmt->execute();
@@ -30,6 +62,7 @@ class CompanySettingsController {
                 ];
             }
             
+            $this->setCache($settings);
             Response::success($settings, 'Company settings retrieved successfully');
         } catch (PDOException $e) {
             Response::error('Failed to fetch company settings: ' . $e->getMessage());
@@ -115,6 +148,7 @@ class CompanySettingsController {
                 $stmt->execute();
             }
             
+            $this->clearCache();
             Response::success($data, 'Company settings updated successfully');
         } catch (PDOException $e) {
             Response::error('Database error: ' . $e->getMessage());
@@ -171,6 +205,7 @@ class CompanySettingsController {
                 $stmt->bindParam(':logo_path', $logoPath);
                 $stmt->execute();
                 
+                $this->clearCache();
                 Response::success(['logo_path' => $logoPath], 'Logo uploaded successfully');
             } else {
                 Response::error('Failed to upload logo');
