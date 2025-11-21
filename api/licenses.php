@@ -8,6 +8,9 @@
  */
 
 require_once __DIR__ . '/error_handler.php';
+require_once __DIR__ . '/utils/Auth.php';
+require_once __DIR__ . '/utils/PermissionHelper.php';
+require_once __DIR__ . '/utils/Response.php';
 
 // Handle preflight OPTIONS request
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
@@ -37,6 +40,19 @@ try {
 
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         // Handle GET request - fetch all license purchases
+        
+        // Check authentication
+        $userId = Auth::getUserId();
+        if (!$userId) {
+            Response::unauthorized('Authentication required');
+            exit;
+        }
+        
+        $currentUser = Auth::getCurrentUser($pdo);
+        if (!PermissionHelper::hasPermission($currentUser['permissions'], 'licenses', 'read')) {
+            Response::forbidden('You do not have permission to view licenses');
+            exit;
+        }
         
         // Check if license_purchases table exists
         $stmt = $pdo->query("SHOW TABLES LIKE 'license_purchases'");
@@ -190,6 +206,19 @@ try {
 
     } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Handle POST request - create new license purchase
+        
+        // Check authentication
+        $userId = Auth::getUserId();
+        if (!$userId) {
+            Response::unauthorized('Authentication required');
+            exit;
+        }
+        
+        $currentUser = Auth::getCurrentUser($pdo);
+        if (!PermissionHelper::hasPermission($currentUser['permissions'], 'licenses', 'create')) {
+            Response::forbidden('You do not have permission to create licenses');
+            exit;
+        }
         
         error_log("POST request received for license creation");
         
@@ -502,6 +531,19 @@ try {
     } elseif ($_SERVER['REQUEST_METHOD'] === 'PUT') {
         // Handle PUT request - update license purchase
         
+        // Check authentication
+        $userId = Auth::getUserId();
+        if (!$userId) {
+            Response::unauthorized('Authentication required');
+            exit;
+        }
+        
+        $currentUser = Auth::getCurrentUser($pdo);
+        if (!PermissionHelper::hasPermission($currentUser['permissions'], 'licenses', 'update')) {
+            Response::forbidden('You do not have permission to update licenses');
+            exit;
+        }
+        
         $input = json_decode(file_get_contents('php://input'), true);
         
         if (!$input || !isset($input['id'])) {
@@ -642,6 +684,19 @@ try {
 
     } elseif ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
         // Handle DELETE request - delete license purchase
+        
+        // Check authentication
+        $userId = Auth::getUserId();
+        if (!$userId) {
+            Response::unauthorized('Authentication required');
+            exit;
+        }
+        
+        $currentUser = Auth::getCurrentUser($pdo);
+        if (!PermissionHelper::hasPermission($currentUser['permissions'], 'licenses', 'delete')) {
+            Response::forbidden('You do not have permission to delete licenses');
+            exit;
+        }
         
         $input = json_decode(file_get_contents('php://input'), true);
         
