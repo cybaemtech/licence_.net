@@ -68,7 +68,7 @@ function AppContent() {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/License/">
       <PermissionProvider>
         <AppContent />
       </PermissionProvider>

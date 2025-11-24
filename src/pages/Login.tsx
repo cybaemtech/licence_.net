@@ -17,7 +17,7 @@ function Login() {
     const session = getSession();
     if (session) {
       const from = (location.state as any)?.from || "/";
-      navigate(from);
+      navigate(from, { replace: true });
     }
   }, []);
 
@@ -55,13 +55,13 @@ function Login() {
 
       if (data && data.user) {
         setSuccess("Login successful! Redirecting...");
-        
+
         // Trigger auth change event
         window.dispatchEvent(new Event('authchange'));
 
         setTimeout(() => {
           const from = (location.state as any)?.from || "/";
-          navigate(from);
+          navigate(from, { replace: true });
         }, 1000);
       }
     } catch (err) {
