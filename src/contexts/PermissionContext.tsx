@@ -1,6 +1,8 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { getUserPermissions, UserPermissions, hasPermission as checkPermission } from '../utils/permissionHelper';
 import { getSession } from '../utils/session';
+import { getApiBaseUrl } from '../utils/api';
 
 interface PermissionContextType {
   permissions: UserPermissions | null;
@@ -13,6 +15,7 @@ const PermissionContext = createContext<PermissionContextType | undefined>(undef
 
 export function PermissionProvider({ children }: { children: ReactNode }) {
   const [permissions, setPermissions] = useState<UserPermissions | null>(null);
+  const navigate = useNavigate();
 
   const loadPermissions = async () => {
     const session = getSession();
@@ -23,7 +26,7 @@ export function PermissionProvider({ children }: { children: ReactNode }) {
 
     try {
       // Validate session and get fresh permissions from server
-      const response = await fetch('/api/validate-session', {
+      const response = await fetch(`${getApiBaseUrl()}/validate-session`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId: session.id })
@@ -33,7 +36,7 @@ export function PermissionProvider({ children }: { children: ReactNode }) {
         console.warn('Session validation failed, user needs to re-login');
         setPermissions(null);
         localStorage.removeItem('auth_session');
-        window.location.href = '/login';
+        navigate('/login');
         return;
       }
 
@@ -41,7 +44,7 @@ export function PermissionProvider({ children }: { children: ReactNode }) {
       if (data.success && data.user && data.user.permissions) {
         // Update permissions in state
         setPermissions(data.user.permissions);
-        
+
         // Update permissions in localStorage for offline access
         const updatedSession = { ...session, permissions: data.user.permissions };
         localStorage.setItem('auth_session', JSON.stringify(updatedSession));

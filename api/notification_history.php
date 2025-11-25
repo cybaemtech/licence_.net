@@ -1,8 +1,4 @@
 <?php
-/**
- * Email Notification History API Endpoint
- * GET: Retrieve email notification history
- */
 
 // Load environment variables
 require_once __DIR__ . '/load_env.php';
@@ -122,7 +118,8 @@ try {
         echo json_encode(['success' => false, 'error' => 'Method not allowed']);
     }
 
-} catch (PDOException $e) {
+} 
+catch (PDOException $e) {
     error_log("Notification History API Database Error: " . $e->getMessage());
     ob_clean();
     http_response_code(500);

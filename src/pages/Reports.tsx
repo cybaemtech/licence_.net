@@ -33,7 +33,6 @@ const COLORS = [
   "#F43F5E", "#F97316", "#84CC16", "#14B8A6", "#06B6D4", "#94A3B8"
 ];
 
-
 interface LicensePurchase {
   id: string;
   serial_no: string;

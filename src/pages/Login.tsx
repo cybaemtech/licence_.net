@@ -203,8 +203,6 @@ function Login() {
               </p>
             </div>
 
-         
-
             <div className="space-y-4">
               <button
                 type="submit"
@@ -223,7 +221,6 @@ function Login() {
               </button>
             </div>
           </form>
-
           <div className="text-center">
             <p className="text-sm text-gray-600">
               By signing in, you agree to our{" "}

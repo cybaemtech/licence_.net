@@ -26,7 +26,7 @@ function AppContent() {
     // Check system preference
     return window.matchMedia('(prefers-color-scheme: dark)').matches;
   });
-  
+
   const location = useLocation();
   const showNavbar = location.pathname !== '/login';
 
@@ -41,11 +41,10 @@ function AppContent() {
   }, [darkMode]);
 
   return (
-    <div className={`min-h-screen transition-colors duration-200 ${
-      darkMode 
-        ? 'bg-dark-900 text-gray-100' 
+    <div className={`min-h-screen transition-colors duration-200 ${darkMode
+        ? 'bg-dark-900 text-gray-100'
         : 'bg-gray-50 text-gray-900'
-    }`}>
+      }`}>
       {showNavbar && <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />}
       <AuthWrapper>
         <Routes>
@@ -68,7 +67,7 @@ function AppContent() {
 
 function App() {
   return (
-    <Router basename="/License/">
+    <Router basename={import.meta.env.BASE_URL}>
       <PermissionProvider>
         <AppContent />
       </PermissionProvider>

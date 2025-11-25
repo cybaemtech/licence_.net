@@ -157,9 +157,7 @@ export async function convertCurrency(
   return usdAmount;
 }
 
-/**
- * Calculate total cost in INR (base currency for the system)
- */
+
 export async function calculateTotalCostInINR(
   costPerUser: number,
   quantity: number,
@@ -174,9 +172,6 @@ export async function calculateTotalCostInINR(
   return await convertCurrency(totalCost, currency, 'INR');
 }
 
-/**
- * Format currency amount with appropriate symbol and locale
- */
 export function formatCurrency(amount: number | string, currency: string): string {
   // Convert string to number if needed
   const numericAmount = typeof amount === 'string' ? parseFloat(amount) : amount;
@@ -195,7 +190,6 @@ export function formatCurrency(amount: number | string, currency: string): strin
       maximumFractionDigits: 2,
     }).format(numericAmount);
   }
-  
   // Try to format with Intl.NumberFormat for any valid currency code
   try {
     return new Intl.NumberFormat('en-US', {

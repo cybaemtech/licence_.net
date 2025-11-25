@@ -38,7 +38,6 @@ interface Vendor {
   document_path: string;
   created_at: string;
 }
-
 interface Currency {
   id: string;
   code: string;
@@ -46,7 +45,6 @@ interface Currency {
   symbol: string;
   exchange_rate_to_inr: number;
 }
-
 function Vendors() {
   const navigate = useNavigate();
   const [vendors, setVendors] = useState<Vendor[]>([]);
@@ -78,7 +76,7 @@ function Vendors() {
   const [viewerDocument, setViewerDocument] = useState({ path: '', title: '' });
   const [formLoading, setFormLoading] = useState(false);
   
-  // Sorting state
+
   const [sortOrder] = useState<'asc' | 'desc'>('asc');
 
   useEffect(() => {
